@@ -17,102 +17,83 @@ public class AssociateCompanyDetailEdit {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Company_Aiid")
+	@Column(name = "COMPANY_AIID")
 	private Integer companyAiid;
 
-	@Column(name = "Delete_Company")
+	@Column(name = "DELETECOMPANY")
 	private boolean deleteCompany;
 
-	@Column(name = "Company_Name_En")
+	@Column(name = "COMPANY_NAME_EN")
 	private String companyNameEN;
 
-	@Column(name = "Show_Company_Name_En")
+	@Column(name = "SHOW_COMPANYNAME_EN")
 	private boolean showCompanyNameEN;
 
-	@Column(name = "Company_Name_Jp")
+	@Column(name = "COMPANY_NAME_JP")
 	private String companyNameJP;
 
-	@Column(name = "Show_Company_Name_Jp")
+	@Column(name = "SHOW_COMPANY_NAME_JP")
 	private boolean showCompanyNameJP;
 
-	@Column(name = "Company_Name_Cn")
+	@Column(name = "COMPANY_NAME_CN")
 	private String companyNameCN;
 
-	@Column(name = "Show_Company_Name_Cn")
+	@Column(name = "SHOW_COMPANY_NAME_CN")
 	private boolean showCompanyNameCN;
 
-	@Column(name = "Establishment_Date_Year")
+	@Column(name = "ESTABLISHMENT_DATE_YEAR")
 	private String establishmentDateYear;
 
-	@Column(name = "Establishment_Date_Month")
+	@Column(name = "ESTABLISHMENT_DATE_MONTH")
 	private String establishmentDateMonth;
 
-	@Column(name = "Establishment_Date_Date")
+	@Column(name = "ESTABLISHMENT_DATE_DATE")
 	private String establishmentDateDate;
 
-	@Column(name = "Capital")
+	@Column(name = "CAPITAL")
 	private String capital;
 
-	@Column(name = "Website")
+	@Column(name = "WEBSITE")
 	private String website;
 
-	@Column(name = "Director")
+	@Column(name = "DIRECTOR")
 	private String director;
 
-	@Column(name = "Job_Description")
+	@Column(name = "JOB_DESCRIPTION")
 	private String jobDescription;
 
-	@Column(name = "Inquiry_Email")
+	@Column(name = "INQUIRY_EMAIL")
 	private String inquiryEmail;
 
-	@Column(name = "Carrier_Email")
+	@Column(name = "CARRIER_EMAIL")
 	private String carrierEmail;
 
-	@Column(name = "Invoice_Email")
+	@Column(name = "INVOICE_EMAIL")
 	private String invoiceEmail;
 
-	@Column(name = "Remarks")
+	@Column(name = "REMARKS")
 	private String remarks;
 
-	@Column(name = "ASSOCIATE_COMPANY_CREATE_TIME")
+	@Column(name = "ASSOCIATECOMPANY_CREAT_TIME")
 	private String associateCompanyCreatTime;
+
+	@Column(name = "JOINDATE_YEAR")
+	private Integer joindateYear;
+
+	@Column(name = "JOINDATE_MONTH")
+	private Integer joindateMonth;
 
 	public AssociateCompanyDetailEdit() {
 
 	}
 
-	public AssociateCompanyDetailEdit(Integer companyAiid, boolean deleteCompany, String companyNameEN,
-			boolean showCompanyNameEN, String companyNameJP, boolean showCompanyNameJP, String companyNameCN,
-			boolean showCompanyNameCN, String establishmentDateYear, String establishmentDateMonth,
-			String establishmentDateDate, String capital, String website, String director, String jobDescription,
-			String inquiryEmail, String carrierEmail, String invoiceEmail, String remarks) {
-
-		this.companyAiid = companyAiid;
-		this.deleteCompany = deleteCompany;
-		this.companyNameEN = companyNameEN;
-		this.showCompanyNameEN = showCompanyNameEN;
-		this.companyNameJP = companyNameJP;
-		this.showCompanyNameJP = showCompanyNameJP;
-		this.companyNameCN = companyNameCN;
-		this.showCompanyNameCN = showCompanyNameCN;
-		this.establishmentDateYear = establishmentDateYear;
-		this.establishmentDateMonth = establishmentDateMonth;
-		this.establishmentDateDate = establishmentDateDate;
-		this.capital = capital;
-		this.website = website;
-		this.director = director;
-		this.jobDescription = jobDescription;
-		this.inquiryEmail = inquiryEmail;
-		this.carrierEmail = carrierEmail;
-		this.invoiceEmail = invoiceEmail;
-		this.remarks = remarks;
-	}
-
+	// 建立資料的建構方法 ; 還沒加入 PAGE 的部分 ;
 	public AssociateCompanyDetailEdit(boolean deleteCompany, String companyNameEN, boolean showCompanyNameEN,
 			String companyNameJP, boolean showCompanyNameJP, String companyNameCN, boolean showCompanyNameCN,
 			String establishmentDateYear, String establishmentDateMonth, String establishmentDateDate, String capital,
 			String website, String director, String jobDescription, String inquiryEmail, String carrierEmail,
-			String invoiceEmail, String remarks, String associateCompanyCreatTime) {
+			String invoiceEmail, String remarks, String associateCompanyCreatTime, Integer joindateYear,
+			Integer joindateMonth) {
 		this.deleteCompany = deleteCompany;
 		this.companyNameEN = companyNameEN;
 		this.showCompanyNameEN = showCompanyNameEN;
@@ -132,16 +113,16 @@ public class AssociateCompanyDetailEdit {
 		this.invoiceEmail = invoiceEmail;
 		this.remarks = remarks;
 		this.associateCompanyCreatTime = associateCompanyCreatTime;
+		this.joindateYear = joindateYear;
+		this.joindateMonth = joindateMonth;
 	}
 
-	public AssociateCompanyDetailEdit(Integer companyAiid, boolean deleteCompany, String companyNameEN,
-			boolean showCompanyNameEN, String companyNameJP, boolean showCompanyNameJP, String companyNameCN,
-			boolean showCompanyNameCN, String establishmentDateYear, String establishmentDateMonth,
-			String establishmentDateDate, String capital, String website, String director, String jobDescription,
-			String inquiryEmail, String carrierEmail, String invoiceEmail, String remarks,
-			String associateCompanyCreatTime) {
-		this.companyAiid = companyAiid;
-		this.deleteCompany = deleteCompany;
+	// 建立資料的建構方法 ; 還沒加入 PAGE 的部分 ;
+	public AssociateCompanyDetailEdit(String companyNameEN, boolean showCompanyNameEN, String companyNameJP,
+			boolean showCompanyNameJP, String companyNameCN, boolean showCompanyNameCN, String establishmentDateYear,
+			String establishmentDateMonth, String establishmentDateDate, String capital, String website,
+			String director, String jobDescription, String inquiryEmail, String carrierEmail, String invoiceEmail,
+			String remarks, String associateCompanyCreatTime, Integer joindateYear, Integer joindateMonth) {
 		this.companyNameEN = companyNameEN;
 		this.showCompanyNameEN = showCompanyNameEN;
 		this.companyNameJP = companyNameJP;
@@ -160,6 +141,33 @@ public class AssociateCompanyDetailEdit {
 		this.invoiceEmail = invoiceEmail;
 		this.remarks = remarks;
 		this.associateCompanyCreatTime = associateCompanyCreatTime;
+		this.joindateYear = joindateYear;
+		this.joindateMonth = joindateMonth;
+	}
+
+	// 更新公司資料的方法
+	public void updateAssociateCompanyDetailEdit(String companyNameEN, boolean showCompanyNameEN, String companyNameJP,
+			boolean showCompanyNameJP, String companyNameCN, boolean showCompanyNameCN, String establishmentDateYear,
+			String establishmentDateMonth, String establishmentDateDate, String capital, String website,
+			String director, String jobDescription, String inquiryEmail, String carrierEmail, String invoiceEmail,
+			String remarks) {
+		this.companyNameEN = companyNameEN;
+		this.showCompanyNameEN = showCompanyNameEN;
+		this.companyNameJP = companyNameJP;
+		this.showCompanyNameJP = showCompanyNameJP;
+		this.companyNameCN = companyNameCN;
+		this.showCompanyNameCN = showCompanyNameCN;
+		this.establishmentDateYear = establishmentDateYear;
+		this.establishmentDateMonth = establishmentDateMonth;
+		this.establishmentDateDate = establishmentDateDate;
+		this.capital = capital;
+		this.website = website;
+		this.director = director;
+		this.jobDescription = jobDescription;
+		this.inquiryEmail = inquiryEmail;
+		this.carrierEmail = carrierEmail;
+		this.invoiceEmail = invoiceEmail;
+		this.remarks = remarks;
 	}
 
 	public Integer getCompanyAiid() {
@@ -320,6 +328,22 @@ public class AssociateCompanyDetailEdit {
 
 	public void setAssociateCompanyCreatTime(String associateCompanyCreatTime) {
 		this.associateCompanyCreatTime = associateCompanyCreatTime;
+	}
+
+	public Integer getJoindateYear() {
+		return joindateYear;
+	}
+
+	public void setJoindateYear(Integer joindateYear) {
+		this.joindateYear = joindateYear;
+	}
+
+	public Integer getJoindateMonth() {
+		return joindateMonth;
+	}
+
+	public void setJoindateMonth(Integer joindateMonth) {
+		this.joindateMonth = joindateMonth;
 	}
 
 }

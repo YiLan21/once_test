@@ -22,52 +22,35 @@ public class AssociateCompanyDetailEditController {
 	@PostMapping(value = "/api/createAndUpdateCompanyDetailEdit")
 	public AssociateCompanyRes createAndUpdateCompanyDetailEdit(@RequestBody AssociateCompanyReq associateCompanyReq) {
 		AssociateCompanyDetailEdit associateCompanyDetailEdit = associateCompanyDetailEditService
-				.createAndUpdateCompanyDetailEdit(
-						associateCompanyReq.getCompanyAiid(),
-						associateCompanyReq.getCompanyNameEN(),
-						associateCompanyReq.isShowCompanyNameEN(),
-						associateCompanyReq.getCompanyNameJP(),
-						associateCompanyReq.isShowCompanyNameJP(), 
-						associateCompanyReq.getCompanyNameCN(),
-						associateCompanyReq.isShowCompanyNameCN(),
-						associateCompanyReq.getEstablishmentDateYear(),
-						associateCompanyReq.getEstablishmentDateMonth(),
-						associateCompanyReq.getEstablishmentDateDate(),
-						associateCompanyReq.getCapital(), 
-						associateCompanyReq.getWebsite(),
-						associateCompanyReq.getDirector(),
-						associateCompanyReq.getJobDescription(),
-						associateCompanyReq.getInquiryEmail(), 
-						associateCompanyReq.getCarrierEmail(),
-						associateCompanyReq.getInvoiceEmail(), 
+				.createAndUpdateCompanyDetailEdit(associateCompanyReq.getCompanyAiid(),
+						associateCompanyReq.getCompanyNameEN(), associateCompanyReq.isShowCompanyNameEN(),
+						associateCompanyReq.getCompanyNameJP(), associateCompanyReq.isShowCompanyNameJP(),
+						associateCompanyReq.getCompanyNameCN(), associateCompanyReq.isShowCompanyNameCN(),
+						associateCompanyReq.getEstablishmentDateYear(), associateCompanyReq.getEstablishmentDateMonth(),
+						associateCompanyReq.getEstablishmentDateDate(), associateCompanyReq.getCapital(),
+						associateCompanyReq.getWebsite(), associateCompanyReq.getDirector(),
+						associateCompanyReq.getJobDescription(), associateCompanyReq.getInquiryEmail(),
+						associateCompanyReq.getCarrierEmail(), associateCompanyReq.getInvoiceEmail(),
 						associateCompanyReq.getRemarks());
 
 		// 回傳到"成功"前端顯示, 如果不行再改成 null
 		return new AssociateCompanyRes(associateCompanyDetailEdit, "成功");
 	}
+
 	// 建立資料的畫面 K2029
 	@PostMapping(value = "/api/createAssociateCompanyDetailEditTest")
 	public AssociateCompanyRes createAssociateCompany(@RequestBody AssociateCompanyReq associateCompanyReq) {
 
 		AssociateCompanyDetailEdit associateCompanyDetailEdit = associateCompanyDetailEditService
-				.createAssociateCompanyDetailEdit(
-						associateCompanyReq.isDeleteCompany(),
-						associateCompanyReq.getCompanyNameEN(), 
-						associateCompanyReq.isShowCompanyNameEN(),
-						associateCompanyReq.getCompanyNameJP(), 
-						associateCompanyReq.isShowCompanyNameJP(),
-						associateCompanyReq.getCompanyNameCN(), 
-						associateCompanyReq.isShowCompanyNameCN(),
-						associateCompanyReq.getEstablishmentDateYear(), 
-						associateCompanyReq.getEstablishmentDateMonth(),
-						associateCompanyReq.getEstablishmentDateDate(),
-						associateCompanyReq.getCapital(),
-						associateCompanyReq.getWebsite(), 
-						associateCompanyReq.getDirector(),
-						associateCompanyReq.getJobDescription(), 
-						associateCompanyReq.getInquiryEmail(),
-						associateCompanyReq.getCarrierEmail(),
-						associateCompanyReq.getInvoiceEmail(),
+				.createAssociateCompanyDetailEdit(associateCompanyReq.isDeleteCompany(),
+						associateCompanyReq.getCompanyNameEN(), associateCompanyReq.isShowCompanyNameEN(),
+						associateCompanyReq.getCompanyNameJP(), associateCompanyReq.isShowCompanyNameJP(),
+						associateCompanyReq.getCompanyNameCN(), associateCompanyReq.isShowCompanyNameCN(),
+						associateCompanyReq.getEstablishmentDateYear(), associateCompanyReq.getEstablishmentDateMonth(),
+						associateCompanyReq.getEstablishmentDateDate(), associateCompanyReq.getCapital(),
+						associateCompanyReq.getWebsite(), associateCompanyReq.getDirector(),
+						associateCompanyReq.getJobDescription(), associateCompanyReq.getInquiryEmail(),
+						associateCompanyReq.getCarrierEmail(), associateCompanyReq.getInvoiceEmail(),
 						associateCompanyReq.getRemarks());
 
 		// 回傳到"成功"前端顯示, 如果不行再改成 null
@@ -92,25 +75,15 @@ public class AssociateCompanyDetailEditController {
 	public AssociateCompanyRes updateAssociateCompany(@RequestBody AssociateCompanyReq associateCompanyReq) {
 
 		AssociateCompanyDetailEdit associateCompanyDetailEdit = associateCompanyDetailEditService
-				.updateAssociateCompany(
-						associateCompanyReq.getCompanyAiid(), 
-						associateCompanyReq.getCompanyNameEN(),
-						associateCompanyReq.isShowCompanyNameEN(), 
-						associateCompanyReq.getCompanyNameJP(),
-						associateCompanyReq.isShowCompanyNameJP(),
-						associateCompanyReq.getCompanyNameCN(),
-						associateCompanyReq.isShowCompanyNameCN(), 
-						associateCompanyReq.getEstablishmentDateYear(),
-						associateCompanyReq.getEstablishmentDateMonth(),
-						associateCompanyReq.getEstablishmentDateDate(),
-						associateCompanyReq.getCapital(), 
-						associateCompanyReq.getWebsite(),
-						associateCompanyReq.getDirector(), 
-						associateCompanyReq.getJobDescription(),
-						associateCompanyReq.getInquiryEmail(),
-						associateCompanyReq.getCarrierEmail(),
-						associateCompanyReq.getInvoiceEmail(), 
-						associateCompanyReq.getRemarks());
+				.updateAssociateCompany(associateCompanyReq.getCompanyAiid(), associateCompanyReq.getCompanyNameEN(),
+						associateCompanyReq.isShowCompanyNameEN(), associateCompanyReq.getCompanyNameJP(),
+						associateCompanyReq.isShowCompanyNameJP(), associateCompanyReq.getCompanyNameCN(),
+						associateCompanyReq.isShowCompanyNameCN(), associateCompanyReq.getEstablishmentDateYear(),
+						associateCompanyReq.getEstablishmentDateMonth(), associateCompanyReq.getEstablishmentDateDate(),
+						associateCompanyReq.getCapital(), associateCompanyReq.getWebsite(),
+						associateCompanyReq.getDirector(), associateCompanyReq.getJobDescription(),
+						associateCompanyReq.getInquiryEmail(), associateCompanyReq.getCarrierEmail(),
+						associateCompanyReq.getInvoiceEmail(), associateCompanyReq.getRemarks());
 
 		// 回傳到"成功"前端顯示, 如果不行再改成 null
 		return new AssociateCompanyRes(associateCompanyDetailEdit, "成功");
@@ -135,6 +108,13 @@ public class AssociateCompanyDetailEditController {
 	@PostMapping(value = "/api/getAllAssociateCompanyListByReq")
 	public AssociateCompanyRes getAllAssociateCompanyListByReq() {
 		return associateCompanyDetailEditService.getAllAssociateCompanyListByReq();
+	}
+
+	// 顯示所有合作公司 K2028 搜尋資料
+	@PostMapping(value = "/api/getAllAssociateCompanyListByReqByPage")
+	public AssociateCompanyRes getAllAssociateCompanyListByReqByPage(
+			@RequestBody AssociateCompanyReq associateCompanyReq) {
+		return associateCompanyDetailEditService.getAllAssociateCompanyListByReqByPage(associateCompanyReq.getPage());
 	}
 
 }

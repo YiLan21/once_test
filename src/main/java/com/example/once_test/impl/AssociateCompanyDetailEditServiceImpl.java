@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -253,6 +256,25 @@ public class AssociateCompanyDetailEditServiceImpl implements AssociateCompanyDe
 
 		List<AssociateCompanyDetailEdit> associateCompanyListAll = associateCompanyDetailEditDao
 				.findAllByOrderByAssociateCompanyCreatTimeAsc();
+
+		List<AssociateCompanyList> associateCompanyList = new ArrayList<>();
+		for (AssociateCompanyDetailEdit item : associateCompanyListAll) {
+
+			if (item.isDeleteCompany() != true) {
+				AssociateCompanyList associateCompany = new AssociateCompanyList(item.getCompanyAiid(),
+						item.getCompanyNameJP(), item.getDirector(), item.getAssociateCompanyCreatTime());
+				associateCompanyList.add(associateCompany);
+			}
+		}
+		return new AssociateCompanyRes(associateCompanyList);
+	}
+
+	@Override
+	public AssociateCompanyRes getAllAssociateCompanyListByReqByPage(int page) {
+
+		Pageable pageable = PageRequest.of(page-1, 10);
+
+		Page<AssociateCompanyDetailEdit> associateCompanyListAll = associateCompanyDetailEditDao.findAll(pageable);
 
 		List<AssociateCompanyList> associateCompanyList = new ArrayList<>();
 		for (AssociateCompanyDetailEdit item : associateCompanyListAll) {

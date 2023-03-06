@@ -48,11 +48,21 @@ public class AssociateCompanyReq {
 	private String AssociateCompanyName;
 
 	private Integer joindateYear;
-	
+
 	private Integer joindateMonth;
+
+	private int page;
 
 	public AssociateCompanyReq() {
 
+	}
+
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
 	}
 
 	public boolean isDeleteCompany() {

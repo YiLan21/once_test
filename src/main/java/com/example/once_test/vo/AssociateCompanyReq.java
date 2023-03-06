@@ -1,6 +1,5 @@
 package com.example.once_test.vo;
 
-import com.example.once_test.entity.AssociateCompanyDetailEdit;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -9,7 +8,7 @@ public class AssociateCompanyReq {
 	private Integer companyAiid;
 
 	private boolean deleteCompany;
-	
+
 	private String companyNameEN;
 
 	private boolean showCompanyNameEN;
@@ -46,33 +45,32 @@ public class AssociateCompanyReq {
 
 	private String associateCompanyCreatTime;
 
-	private AssociateCompanyDetailEdit associateCompanyDetailEdit;
-	
-	
-	public AssociateCompanyReq () {
-		
+	private String AssociateCompanyName;
+
+	private Integer joindateYear;
+
+	private Integer joindateMonth;
+
+	private int page;
+
+	public AssociateCompanyReq() {
+
 	}
 
-	
-	
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+
 	public boolean isDeleteCompany() {
 		return deleteCompany;
 	}
 
-
-
 	public void setDeleteCompany(boolean deleteCompany) {
 		this.deleteCompany = deleteCompany;
-	}
-
-
-
-	public AssociateCompanyDetailEdit getAssociateCompanyDetailEdit() {
-		return associateCompanyDetailEdit;
-	}
-
-	public void setAssociateCompanyDetailEdit(AssociateCompanyDetailEdit associateCompanyDetailEdit) {
-		this.associateCompanyDetailEdit = associateCompanyDetailEdit;
 	}
 
 	public Integer getCompanyAiid() {
@@ -227,5 +225,28 @@ public class AssociateCompanyReq {
 		this.associateCompanyCreatTime = associateCompanyCreatTime;
 	}
 
-	
+	public String getAssociateCompanyName() {
+		return AssociateCompanyName;
+	}
+
+	public void setAssociateCompanyName(String associateCompanyName) {
+		AssociateCompanyName = associateCompanyName;
+	}
+
+	public Integer getJoindateYear() {
+		return joindateYear;
+	}
+
+	public void setJoindateYear(Integer joindateYear) {
+		this.joindateYear = joindateYear;
+	}
+
+	public Integer getJoindateMonth() {
+		return joindateMonth;
+	}
+
+	public void setJoindateMonth(Integer joindateMonth) {
+		this.joindateMonth = joindateMonth;
+	}
+
 }
